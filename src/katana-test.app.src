@@ -1,0 +1,13 @@
+{application, katana_test,
+ [
+  {description, "Modules and test suites to improve Erlang testing."},
+  {vsn, "0.2.22"},
+  {applications, [kernel, stdlib]},
+  {modules, []},
+  {registered, []},
+  {maintainers, ["Inaka"]},
+  {licenses, ["Apache 2.0"]},
+  {links, [{"Github", "https://github.com/inaka/katana-test"}]},
+  {build_tools, ["erlang.mk"]}
+ ]
+}.
