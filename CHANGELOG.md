@@ -1,9 +1,22 @@
 # Change Log
 
-## [Unreleased](https://github.com/inaka/katana-test/tree/HEAD)
+## [0.0.2](https://github.com/inaka/katana-test/tree/0.0.2) (2016-03-09)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.1...0.0.2)
+
+**Closed issues:**
+
+- Rename katana-test.app.src to katana\_test.app.src [\#8](https://github.com/inaka/katana-test/issues/8)
+- Update to the latest version of elvis\_core \(0.2.8-2\) [\#6](https://github.com/inaka/katana-test/issues/6)
 
 **Merged pull requests:**
 
+- \[Fix \#8\] Rename katana-test.app.src to katana\_test.app.src [\#10](https://github.com/inaka/katana-test/pull/10) ([harenson](https://github.com/harenson))
+- \[Fix \#6\] Update elvis\_core dependency version to 0.2.8-2 [\#7](https://github.com/inaka/katana-test/pull/7) ([harenson](https://github.com/harenson))
+
+## [0.0.1](https://github.com/inaka/katana-test/tree/0.0.1) (2016-03-01)
+**Merged pull requests:**
+
+- Igaray.version bump [\#5](https://github.com/inaka/katana-test/pull/5) ([igaray](https://github.com/igaray))
 - Initial commit. [\#3](https://github.com/inaka/katana-test/pull/3) ([igaray](https://github.com/igaray))
 - Update LICENSE [\#1](https://github.com/inaka/katana-test/pull/1) ([elbrujohalcon](https://github.com/elbrujohalcon))
 
