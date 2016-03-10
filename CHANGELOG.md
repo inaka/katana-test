@@ -1,15 +1,28 @@
 # Change Log
 
+## [0.0.3](https://github.com/inaka/katana-test/tree/0.0.3) (2016-03-10)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.2...0.0.3)
+
+**Closed issues:**
+
+- Add rebar.config file [\#12](https://github.com/inaka/katana-test/issues/12)
+
+**Merged pull requests:**
+
+- \[Fix \#12\] Add rebar.config file [\#14](https://github.com/inaka/katana-test/pull/14) ([harenson](https://github.com/harenson))
+
 ## [0.0.2](https://github.com/inaka/katana-test/tree/0.0.2) (2016-03-09)
 [Full Changelog](https://github.com/inaka/katana-test/compare/0.0.1...0.0.2)
 
 **Closed issues:**
 
+- Bump version to 0.0.2 [\#9](https://github.com/inaka/katana-test/issues/9)
 - Rename katana-test.app.src to katana\_test.app.src [\#8](https://github.com/inaka/katana-test/issues/8)
 - Update to the latest version of elvis\_core \(0.2.8-2\) [\#6](https://github.com/inaka/katana-test/issues/6)
 
 **Merged pull requests:**
 
+- \[Fix \#9\] Bump version to 0.0.2 [\#11](https://github.com/inaka/katana-test/pull/11) ([harenson](https://github.com/harenson))
 - \[Fix \#8\] Rename katana-test.app.src to katana\_test.app.src [\#10](https://github.com/inaka/katana-test/pull/10) ([harenson](https://github.com/harenson))
 - \[Fix \#6\] Update elvis\_core dependency version to 0.2.8-2 [\#7](https://github.com/inaka/katana-test/pull/7) ([harenson](https://github.com/harenson))
 
