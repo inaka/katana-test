@@ -2,12 +2,14 @@ PROJECT = katana-test
 
 DEPS = xref_runner elvis_core
 TEST_DEPS = mixer
+SHELL_DEPS = sync
 BUILD_DEPS = inaka_mk hexer_mk
 LOCAL_DEPS = xmerl tools compiler syntax_tools common_test inets ssl test_server hipe public_key dialyzer wx
 
 dep_xref_runner  = hex 0.2.4
 dep_mixer        = git https://github.com/inaka/mixer.git 0.1.4
 dep_elvis_core   = git https://github.com/inaka/elvis_core.git 0.2.8-2
+dep_sync         = git https://github.com/rustyio/sync.git 9c78e7b
 dep_inaka_mk     = git https://github.com/inaka/inaka.mk.git 1.0.0
 dep_hexer_mk     = git https://github.com/inaka/hexer.mk.git 1.1.0
 
