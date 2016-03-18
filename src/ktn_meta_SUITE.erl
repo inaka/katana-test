@@ -19,13 +19,10 @@ all() -> [dialyzer, elvis, xref].
 %%      - xref_checks: List of xref checks to perform
 -spec xref(config()) -> {comment, []}.
 xref(Config) ->
-  BaseDir = base_dir(Config),
   XrefConfig =
     case test_server:lookup_config(xref_config, Config) of
       undefined ->
-        #{ dirs => [ filename:join(BaseDir, "ebin")
-                   , filename:join(BaseDir, "test")
-                   ]
+        #{ dirs => dirs(Config)
          , xref_defaults => [ {verbose, true}
                             , {recurse, true}
                             , {builtins, true}
@@ -56,11 +53,8 @@ xref(Config) ->
 %%      You can also change the warnings using the 'dialyzer_warnings' parameter
 -spec dialyzer(config()) -> {comment, []}.
 dialyzer(Config) ->
-  BaseDir = base_dir(Config),
   Plts = plts(Config),
-  Dirs = [ filename:join(BaseDir, "ebin")
-         , filename:join(BaseDir, "test")
-         ],
+  Dirs = dirs(Config),
   Warnings =
     case test_server:lookup_config(dialyzer_warnings, Config) of
       undefined -> [error_handling, race_conditions, unmatched_returns];
@@ -125,3 +119,12 @@ fix_dirs(#{dirs := Dirs} = Group, Config) ->
   NewDirs =
     [filename:join(base_dir(Config), Dir) || Dir <- Dirs],
   Group#{dirs := NewDirs}.
+
+dirs(Config) ->
+  BaseDir = base_dir(Config),
+  Dirs =
+    case test_server:lookup_config(dirs, Config) of
+      undefined -> ["ebin", "test"];
+      Directories -> Directories
+    end,
+  [filename:join(BaseDir, Dir) || Dir <- Dirs].
