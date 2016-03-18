@@ -1,14 +1,31 @@
 # Change Log
 
+## [0.0.4](https://github.com/inaka/katana-test/tree/0.0.4) (2016-03-18)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.3...0.0.4)
+
+**Fixed bugs:**
+
+- sync is not in SHELL\_DEPS [\#16](https://github.com/inaka/katana-test/pull/16) ([elbrujohalcon](https://github.com/elbrujohalcon))
+
+**Closed issues:**
+
+- Allow user to provide a list with folders to check for xref and dialyzer tests [\#17](https://github.com/inaka/katana-test/issues/17)
+
+**Merged pull requests:**
+
+- \[Fix \#17\] Allow user to provide a list of folders to check with xref and dialyzer tests [\#18](https://github.com/inaka/katana-test/pull/18) ([harenson](https://github.com/harenson))
+
 ## [0.0.3](https://github.com/inaka/katana-test/tree/0.0.3) (2016-03-10)
 [Full Changelog](https://github.com/inaka/katana-test/compare/0.0.2...0.0.3)
 
 **Closed issues:**
 
+- Bump version to 0.0.3 [\#13](https://github.com/inaka/katana-test/issues/13)
 - Add rebar.config file [\#12](https://github.com/inaka/katana-test/issues/12)
 
 **Merged pull requests:**
 
+- \[Fix \#13\] Bump version to 0.0.3 [\#15](https://github.com/inaka/katana-test/pull/15) ([harenson](https://github.com/harenson))
 - \[Fix \#12\] Add rebar.config file [\#14](https://github.com/inaka/katana-test/pull/14) ([harenson](https://github.com/harenson))
 
 ## [0.0.2](https://github.com/inaka/katana-test/tree/0.0.2) (2016-03-09)
