@@ -81,7 +81,12 @@ elvis(Config) ->
   ElvisConfig =
     case test_server:lookup_config(elvis_config, Config) of
       undefined ->
-        ConfigFile = filename:join(base_dir(Config), "elvis.config"),
+        BaseDir = base_dir(Config),
+        ConfigFile =
+          case is_rebar3_project(Config) of
+            true  -> filename:join(BaseDir, "../../../../elvis.config");
+            false -> filename:join(BaseDir, "elvis.config")
+          end,
         [ fix_dirs(Group, Config)
         || Group <- elvis_config:load_file(ConfigFile)];
       ConfigFile -> elvis_config:load_file(ConfigFile)
@@ -106,7 +111,15 @@ base_dir(Config) ->
 plts(Config) ->
   case test_server:lookup_config(plts, Config) of
     undefined ->
-      Wildcard = filename:join(base_dir(Config), "*.plt"),
+      BaseDir = base_dir(Config),
+      Wildcard =
+        case is_rebar3_project(Config) of
+          true ->
+            DefaultRebar3PltLoc = filename:join(BaseDir, "../../../default"),
+            filename:join(DefaultRebar3PltLoc, "*_plt");
+          false ->
+            filename:join(BaseDir, "*.plt")
+        end,
       case filelib:wildcard(Wildcard) of
         [] ->
           ct:fail("No plts at ~s - you need to at least have one", [Wildcard]);
@@ -128,3 +141,15 @@ dirs(Config) ->
       Directories -> Directories
     end,
   [filename:join(BaseDir, Dir) || Dir <- Dirs].
+
+is_rebar3_project(Config) ->
+  BaseDir = base_dir(Config),
+  BaseDirBin = list_to_binary(BaseDir),
+  % rebar3 projects has a `_build' folder for its profiles.
+  case re:split(BaseDir, "_build") of
+    % If there is just one result, it means `build' wasn't found in the path
+    [BaseDirBin] -> false;
+    % If there is at least two results, it means `build' was found in the
+    % path, so we are dealing with a rebar3 project.
+    [_Build, _Found | _] -> true
+  end.
