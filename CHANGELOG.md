@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.5](https://github.com/inaka/katana-test/tree/0.0.5) (2016-03-22)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.4...0.0.5)
+
+**Closed issues:**
+
+- ktn\_meta\_SUITE fails to find the plt when using rebar3 [\#21](https://github.com/inaka/katana-test/issues/21)
+
+**Merged pull requests:**
+
+- \[Fix \#21\] Add Rebar3 default support [\#23](https://github.com/inaka/katana-test/pull/23) ([harenson](https://github.com/harenson))
+
 ## [0.0.4](https://github.com/inaka/katana-test/tree/0.0.4) (2016-03-18)
 [Full Changelog](https://github.com/inaka/katana-test/compare/0.0.3...0.0.4)
 
@@ -9,10 +20,12 @@
 
 **Closed issues:**
 
+- Bump version to 0.0.4 after merging pull\#18 [\#19](https://github.com/inaka/katana-test/issues/19)
 - Allow user to provide a list with folders to check for xref and dialyzer tests [\#17](https://github.com/inaka/katana-test/issues/17)
 
 **Merged pull requests:**
 
+- \[Fix \#19\] Bump version to 0.0.4 [\#20](https://github.com/inaka/katana-test/pull/20) ([harenson](https://github.com/harenson))
 - \[Fix \#17\] Allow user to provide a list of folders to check with xref and dialyzer tests [\#18](https://github.com/inaka/katana-test/pull/18) ([harenson](https://github.com/harenson))
 
 ## [0.0.3](https://github.com/inaka/katana-test/tree/0.0.3) (2016-03-10)
