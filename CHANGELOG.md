@@ -1,14 +1,36 @@
 # Change Log
 
+## [0.1.0](https://github.com/inaka/katana-test/tree/0.1.0) (2016-08-08)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.6...0.1.0)
+
+**Closed issues:**
+
+- Move from erlang.mk to rebar3 [\#28](https://github.com/inaka/katana-test/issues/28)
+
+**Merged pull requests:**
+
+- Euen.28.rebar3 [\#31](https://github.com/inaka/katana-test/pull/31) ([Euen](https://github.com/Euen))
+- Add proper rebar.config [\#27](https://github.com/inaka/katana-test/pull/27) ([elbrujohalcon](https://github.com/elbrujohalcon))
+
+## [0.0.6](https://github.com/inaka/katana-test/tree/0.0.6) (2016-04-08)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.5...0.0.6)
+
+**Merged pull requests:**
+
+- Version Bump to 0.0.6 [\#26](https://github.com/inaka/katana-test/pull/26) ([elbrujohalcon](https://github.com/elbrujohalcon))
+- Upgrade elvis\_core dep to 0.2.11 [\#25](https://github.com/inaka/katana-test/pull/25) ([elbrujohalcon](https://github.com/elbrujohalcon))
+
 ## [0.0.5](https://github.com/inaka/katana-test/tree/0.0.5) (2016-03-22)
 [Full Changelog](https://github.com/inaka/katana-test/compare/0.0.4...0.0.5)
 
 **Closed issues:**
 
+- Bump version to 0.0.5 [\#22](https://github.com/inaka/katana-test/issues/22)
 - ktn\_meta\_SUITE fails to find the plt when using rebar3 [\#21](https://github.com/inaka/katana-test/issues/21)
 
 **Merged pull requests:**
 
+- \[Fix \#22\] Bump version to 0.0.5 [\#24](https://github.com/inaka/katana-test/pull/24) ([harenson](https://github.com/harenson))
 - \[Fix \#21\] Add Rebar3 default support [\#23](https://github.com/inaka/katana-test/pull/23) ([harenson](https://github.com/harenson))
 
 ## [0.0.4](https://github.com/inaka/katana-test/tree/0.0.4) (2016-03-18)
