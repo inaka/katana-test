@@ -15,8 +15,4 @@
 
 -spec init_per_suite(config()) -> config().
 init_per_suite(Config) ->
-  [ {base_dir, "../.."}
-  , {elvis_config, "../../test/elvis.config"}
-  , {plts, ["../../.katana-test.plt"]}
-  | Config
-  ].
+  [{application, katana_test}| Config].
