@@ -8,6 +8,6 @@
   {maintainers, ["Inaka"]},
   {licenses, ["Apache 2.0"]},
   {links, [{"Github", "https://github.com/inaka/katana-test"}]},
-  {build_tools, ["erlang.mk"]}
+  {build_tools, ["rebar3"]}
  ]
 }.
