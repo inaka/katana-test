@@ -1,14 +1,17 @@
 # Change Log
 
-## [0.1.0](https://github.com/inaka/katana-test/tree/0.1.0) (2016-08-08)
-[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.6...0.1.0)
+## [0.1.1](https://github.com/inaka/katana-test/tree/0.1.1) (2016-08-11)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.0.6...0.1.1)
 
 **Closed issues:**
 
+- Version Bump to 0.1.0 [\#32](https://github.com/inaka/katana-test/issues/32)
 - Move from erlang.mk to rebar3 [\#28](https://github.com/inaka/katana-test/issues/28)
 
 **Merged pull requests:**
 
+- update build\_tool [\#34](https://github.com/inaka/katana-test/pull/34) ([Euen](https://github.com/Euen))
+- \[Close \#32\] version bump 0.1.0 [\#33](https://github.com/inaka/katana-test/pull/33) ([Euen](https://github.com/Euen))
 - Euen.28.rebar3 [\#31](https://github.com/inaka/katana-test/pull/31) ([Euen](https://github.com/Euen))
 - Add proper rebar.config [\#27](https://github.com/inaka/katana-test/pull/27) ([elbrujohalcon](https://github.com/elbrujohalcon))
 
