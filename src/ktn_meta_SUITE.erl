@@ -57,7 +57,11 @@ dialyzer(Config) ->
   Dirs = dirs(Config),
   Warnings =
     case test_server:lookup_config(dialyzer_warnings, Config) of
-      undefined -> [error_handling, race_conditions, unmatched_returns];
+      undefined -> [ error_handling
+                   , race_conditions
+                   , unmatched_returns
+                   , unknown
+                   ];
       Ws -> Ws
     end,
 
