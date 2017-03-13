@@ -141,7 +141,7 @@ dirs(Config) ->
   BaseDir = base_dir(Config),
   Dirs =
     case test_server:lookup_config(dirs, Config) of
-      undefined -> ["ebin", "test"];
+      undefined -> ["ebin"];
       Directories -> Directories
     end,
   [filename:join(BaseDir, Dir) || Dir <- Dirs].
