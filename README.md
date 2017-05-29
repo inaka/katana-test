@@ -29,9 +29,10 @@ To include the suite in your project, you only need to invoke its functions from
 -include_lib("mixer/include/mixer.hrl").
 -mixin([ktn_meta_SUITE]).
 
--export([init_per_suite/1]).
+-export([init_per_suite/1, end_per_suite/1]).
 
 init_per_suite(Config) -> [{application, your_app} | Config].
+end_per_suite(_) -> ok.
 ```
 
 Of course, you can choose what functions to include, for example if you want `dialyzer` but not `elvis` nor `xref` you can do…
