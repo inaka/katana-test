@@ -1,15 +1,27 @@
 # Change Log
 
+## [1.0.0](https://github.com/inaka/katana-test/tree/1.0.0) (2017-12-05)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.1.1...1.0.0)
+
+**Merged pull requests:**
+
+- \[Fix \#34\] Upgrade deps [\#45](https://github.com/inaka/katana-test/pull/45) ([elbrujohalcon](https://github.com/elbrujohalcon))
+- Remove dead hipchat link [\#44](https://github.com/inaka/katana-test/pull/44) ([elbrujohalcon](https://github.com/elbrujohalcon))
+- Write end\_per\_suite following OTP doc on init\_per\_suite [\#41](https://github.com/inaka/katana-test/pull/41) ([lucafavatella](https://github.com/lucafavatella))
+- Dialyzer warn unknown [\#39](https://github.com/inaka/katana-test/pull/39) ([lucafavatella](https://github.com/lucafavatella))
+
 ## [0.1.1](https://github.com/inaka/katana-test/tree/0.1.1) (2016-08-11)
 [Full Changelog](https://github.com/inaka/katana-test/compare/0.0.6...0.1.1)
 
 **Closed issues:**
 
+- Version Bump to 0.1.1 [\#35](https://github.com/inaka/katana-test/issues/35)
 - Version Bump to 0.1.0 [\#32](https://github.com/inaka/katana-test/issues/32)
 - Move from erlang.mk to rebar3 [\#28](https://github.com/inaka/katana-test/issues/28)
 
 **Merged pull requests:**
 
+- \[Close \#35\] version bump 0.1.1 [\#36](https://github.com/inaka/katana-test/pull/36) ([Euen](https://github.com/Euen))
 - update build\_tool [\#34](https://github.com/inaka/katana-test/pull/34) ([Euen](https://github.com/Euen))
 - \[Close \#32\] version bump 0.1.0 [\#33](https://github.com/inaka/katana-test/pull/33) ([Euen](https://github.com/Euen))
 - Euen.28.rebar3 [\#31](https://github.com/inaka/katana-test/pull/31) ([Euen](https://github.com/Euen))
