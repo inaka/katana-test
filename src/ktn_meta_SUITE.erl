@@ -10,7 +10,7 @@
 
 -type config() :: [{atom(), term()}].
 
--spec all() -> [dialyzer | elvis | xref].
+-spec all() -> [dialyzer | elvis | xref, ...].
 all() -> [dialyzer, elvis, xref].
 
 %% @doc xref's your code using xref_runner.

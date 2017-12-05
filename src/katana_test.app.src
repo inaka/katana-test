@@ -2,7 +2,7 @@
  [
   {description, "Modules and test suites to improve Erlang testing."},
   {vsn, "0.1.1"},
-  {applications, [kernel, stdlib]},
+  {applications, [kernel, stdlib, erts, tools, common_test, dialyzer, elvis_core, xref_runner]},
   {modules, []},
   {registered, []},
   {maintainers, ["Inaka"]},
