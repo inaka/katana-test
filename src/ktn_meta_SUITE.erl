@@ -116,20 +116,29 @@ plts(Config) ->
   case test_server:lookup_config(plts, Config) of
     undefined ->
       BaseDir = base_dir(Config),
-      Wildcard =
-        case is_rebar3_project(Config) of
-          true ->
-            DefaultRebar3PltLoc = filename:join(BaseDir, "../../../default"),
-            filename:join(DefaultRebar3PltLoc, "*_plt");
-          false ->
-            filename:join(BaseDir, "*.plt")
-        end,
-      case filelib:wildcard(Wildcard) of
-        [] ->
-          ct:fail("No plts at ~s - you need to at least have one", [Wildcard]);
+      case plts(BaseDir, is_rebar3_project(Config)) of
+        [] -> ct:fail("No plts found - you need to at least have one");
         Plts -> Plts
       end;
     Plts -> Plts
+  end.
+
+plts(BaseDir, false) -> % not rebar3
+  filelib:wildcard(filename:join(BaseDir, "*.plt"));
+plts(BaseDir, true) ->
+  TestProfileDir = filename:join(BaseDir, "../../../test"),
+  case filelib:wildcard(filename:join(TestProfileDir, "*_plt")) of
+    [] ->
+      DefaultProfileDir = filename:join(BaseDir, "../../../default"),
+      case filelib:wildcard(filename:join(DefaultProfileDir, "*_plt")) of
+        [] ->
+          % Last resort: if there are no plts in test or default, maybe
+          % our user has some other profile where the plt is generated
+          AllProfileDirs = filename:join(BaseDir, "../../../*"),
+          filelib:wildcard(filename:join(AllProfileDirs, "*_plt"));
+        DefaultPlts -> DefaultPlts
+      end;
+    TestPlts -> TestPlts
   end.
 
 fix_dirs(#{dirs := Dirs} = Group, Config) ->
