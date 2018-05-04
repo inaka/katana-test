@@ -60,7 +60,6 @@ dialyzer(Config) ->
       undefined -> [ error_handling
                    , race_conditions
                    , unmatched_returns
-                   , unknown
                    ];
       Ws -> Ws
     end,
