@@ -1,6 +1,6 @@
 # katana-test
 
-Katana Test is an Erlang library application containing modules usefule for testing Erlang systems.
+Katana Test is an Erlang library application containing modules useful for testing Erlang systems.
 It currently contains the module `ktn_meta_SUITE`, which is a Common Test suite to be included among your tests. Read below for more information.
 
 # Contact Us
