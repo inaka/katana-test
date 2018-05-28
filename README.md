@@ -1,6 +1,6 @@
 # katana-test
 
-Katana Test is an Erlang library application containing modules usefule for testing Erlang systems.
+Katana Test is an Erlang library application containing modules useful for testing Erlang systems.
 It currently contains the module `ktn_meta_SUITE`, which is a Common Test suite to be included among your tests. Read below for more information.
 
 # Contact Us
@@ -18,7 +18,7 @@ And you can check all of our open-source projects at
 The **meta** suite lets you check your code with `dialyzer`, `xref` and `elvis`.
 
 #### Usage
-To include the suite in your project, you only need to invoke its functions from a common_test suite. If you use [mixer](https://github.com/inaka/mixer) you can just do…
+To include the suite in your project, you only need to invoke its functions from a common_test suite. If you use [mixer](https://github.com/inaka/mixer) you can do…
 
 ```erlang
 -module(your_meta_SUITE).
