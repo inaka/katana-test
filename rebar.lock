@@ -1,16 +1,16 @@
 {"1.1.0",
-[{<<"aleppo">>,{pkg,<<"inaka_aleppo">>,<<"1.0.0">>},2},
- {<<"elvis">>,{pkg,<<"elvis_core">>,<<"0.3.9">>},0},
- {<<"getopt">>,{pkg,<<"getopt">>,<<"0.8.2">>},1},
- {<<"katana_code">>,{pkg,<<"katana_code">>,<<"0.1.0">>},1},
- {<<"xref_runner">>,{pkg,<<"xref_runner">>,<<"1.1.0">>},0},
+[{<<"aleppo">>,{pkg,<<"inaka_aleppo">>,<<"1.1.1">>},2},
+ {<<"elvis_core">>,{pkg,<<"elvis_core">>,<<"0.4.1">>},0},
+ {<<"getopt">>,{pkg,<<"getopt">>,<<"1.0.1">>},1},
+ {<<"katana_code">>,{pkg,<<"katana_code">>,<<"0.1.2">>},1},
+ {<<"xref_runner">>,{pkg,<<"xref_runner">>,<<"1.1.1">>},0},
  {<<"zipper">>,{pkg,<<"zipper">>,<<"1.0.1">>},1}]}.
 [
 {pkg_hash,[
- {<<"aleppo">>, <<"8DB14CF16BB8C263C14FF4C3F69F64D7C849D40888944F4204D2CA74F1114CEB">>},
- {<<"elvis">>, <<"6B3C18E1E1CC9BC5684282F59A95B6B42898C1A27E0E2F3CFE9B384AF76A7629">>},
- {<<"getopt">>, <<"B17556DB683000BA50370B16C0619DF1337E7AF7ECBF7D64FBF8D1D6BCE3109B">>},
- {<<"katana_code">>, <<"C34F3926A258D6BEACD8D21F140F3D47D175501936431C460B144339D5271A0B">>},
- {<<"xref_runner">>, <<"12233318D57B58926936F4E4C05E7EDB61CF9F4B413EC058B585490B0ED128C9">>},
+ {<<"aleppo">>, <<"B0F7D05A118C5EBC3A735D68E92A7BD5837FE53455495EDE37CF0AA8BA4912E3">>},
+ {<<"elvis_core">>, <<"3F344A1F1B387FF0A46ED7EA6332575CED62C547A6D1A72A3C9151D2600C3F3F">>},
+ {<<"getopt">>, <<"C73A9FA687B217F2FF79F68A3B637711BB1936E712B521D8CE466B29CBF7808A">>},
+ {<<"katana_code">>, <<"347D42D5E89AC6C4BF8D02B64633AC1BFE14B7724B5910260D39EFEAFE737F01">>},
+ {<<"xref_runner">>, <<"2EC5854DD9E45A980BCAD02F3E138CC5455524DDBF0A1D3BC672832F8E047124">>},
  {<<"zipper">>, <<"3CCB4F14B97C06B2749B93D8B6C204A1ECB6FAFC6050CACC3B93B9870C05952A">>}]}
 ].
