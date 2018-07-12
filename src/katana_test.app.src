@@ -1,7 +1,7 @@
 {application, katana_test,
  [
   {description, "Modules and test suites to improve Erlang testing."},
-  {vsn, "1.0.0"},
+  {vsn, "1.0.1"},
   {applications, [kernel, stdlib, erts, tools, common_test, dialyzer, elvis_core, xref_runner]},
   {modules, []},
   {registered, []},
