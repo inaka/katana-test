@@ -1,10 +1,36 @@
 # Change Log
 
-## [1.0.0](https://github.com/inaka/katana-test/tree/1.0.0) (2017-12-05)
-[Full Changelog](https://github.com/inaka/katana-test/compare/0.1.1...1.0.0)
+## [1.0.1](https://github.com/inaka/katana-test/tree/1.0.1) (2018-07-12)
+[Full Changelog](https://github.com/inaka/katana-test/compare/1.0.0...1.0.1)
+
+**Implemented enhancements:**
+
+- Remove get\_warnings from ktn\_meta\_SUITE [\#29](https://github.com/inaka/katana-test/issues/29)
+
+**Closed issues:**
+
+- If there is a test PLT, katana-test should use that one [\#48](https://github.com/inaka/katana-test/issues/48)
+- Update elvis\_core dependency version to 0.3.9 [\#43](https://github.com/inaka/katana-test/issues/43)
+- Error when is set as dependency using rebar3 [\#30](https://github.com/inaka/katana-test/issues/30)
+- Fulfill the open-source checklist [\#2](https://github.com/inaka/katana-test/issues/2)
 
 **Merged pull requests:**
 
+- update deps [\#51](https://github.com/inaka/katana-test/pull/51) ([getong](https://github.com/getong))
+- Tiny README fixes [\#50](https://github.com/inaka/katana-test/pull/50) ([vassilevsky](https://github.com/vassilevsky))
+- Remove unknown from the list of dialyzer warnings [\#49](https://github.com/inaka/katana-test/pull/49) ([elbrujohalcon](https://github.com/elbrujohalcon))
+- If it exists use `\_build/test/lib` instead of `\_build/default/lib`  [\#38](https://github.com/inaka/katana-test/pull/38) ([amilkr](https://github.com/amilkr))
+
+## [1.0.0](https://github.com/inaka/katana-test/tree/1.0.0) (2017-12-05)
+[Full Changelog](https://github.com/inaka/katana-test/compare/0.1.1...1.0.0)
+
+**Closed issues:**
+
+- Bump Version to 1.0.0 [\#46](https://github.com/inaka/katana-test/issues/46)
+
+**Merged pull requests:**
+
+- Bump version to 1.0.0 [\#47](https://github.com/inaka/katana-test/pull/47) ([elbrujohalcon](https://github.com/elbrujohalcon))
 - \[Fix \#34\] Upgrade deps [\#45](https://github.com/inaka/katana-test/pull/45) ([elbrujohalcon](https://github.com/elbrujohalcon))
 - Remove dead hipchat link [\#44](https://github.com/inaka/katana-test/pull/44) ([elbrujohalcon](https://github.com/elbrujohalcon))
 - Write end\_per\_suite following OTP doc on init\_per\_suite [\#41](https://github.com/inaka/katana-test/pull/41) ([lucafavatella](https://github.com/lucafavatella))
