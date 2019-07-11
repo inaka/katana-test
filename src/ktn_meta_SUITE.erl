@@ -116,14 +116,17 @@ plts(Config) ->
     undefined ->
       BaseDir = base_dir(Config),
       case plts(BaseDir, is_rebar3_project(Config)) of
-        [] -> ct:fail("No plts found - you need to at least have one");
-        Plts -> Plts
+        {[], Dirs} ->
+          ExpandedDirs = [normalize_path(Dir) || Dir <- Dirs],
+          DirsStr = string:join(ExpandedDirs, " "),
+          ct:fail("No plts found in: ~s - you need to at least have one", [DirsStr]);
+        {Plts, _} -> Plts
       end;
     Plts -> Plts
   end.
 
 plts(BaseDir, false) -> % not rebar3
-  filelib:wildcard(filename:join(BaseDir, "*.plt"));
+  {filelib:wildcard(filename:join(BaseDir, "*.plt")), BaseDir};
 plts(BaseDir, true) ->
   TestProfileDir = filename:join(BaseDir, "../../../test"),
   case filelib:wildcard(filename:join(TestProfileDir, "*_plt")) of
@@ -134,10 +137,10 @@ plts(BaseDir, true) ->
           % Last resort: if there are no plts in test or default, maybe
           % our user has some other profile where the plt is generated
           AllProfileDirs = filename:join(BaseDir, "../../../*"),
-          filelib:wildcard(filename:join(AllProfileDirs, "*_plt"));
-        DefaultPlts -> DefaultPlts
+          {filelib:wildcard(filename:join(AllProfileDirs, "*_plt")), [TestProfileDir, DefaultProfileDir, AllProfileDirs]};
+        DefaultPlts -> {DefaultPlts, []}
       end;
-    TestPlts -> TestPlts
+    TestPlts -> {TestPlts, []}
   end.
 
 fix_dirs(#{dirs := Dirs} = Group, Config) ->
@@ -165,3 +168,15 @@ is_rebar3_project(Config) ->
     % path, so we are dealing with a rebar3 project.
     [_Build, _Found | _] -> true
   end.
+
+normalize_path(Path) ->
+  filename:join(normalize_path1(filename:split(Path), [])).
+
+normalize_path1([], Acc) ->
+  lists:reverse(Acc);
+
+normalize_path1([".."|Rest], Acc) ->
+  normalize_path1(Rest, tl(Acc));
+
+normalize_path1([D1|Rest], Acc) ->
+  normalize_path1(Rest, [D1|Acc]).
