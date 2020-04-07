@@ -96,9 +96,22 @@ elvis(Config) ->
     end,
 
   ct:comment("Elvis rocks!"),
-  ok = elvis_core:rock(ElvisConfig),
-
+  case elvis_core:rock(ElvisConfig) of
+    ok -> ok;
+    {fail, Results} ->
+      Errors = [format_elvis_error(R) || #{rules := Rules} = R <- Results, Rules /= []],
+      ct:fail({elvis_failed, Errors})
+  end,
   {comment, ""}.
+
+format_elvis_error(Error) ->
+  #{file := #{path := Path}, rules := Rules} = Error,
+  #{file => Path, problems => lists:flatten([format_elvis_message(R) || R <- Rules])}.
+
+format_elvis_message(Rule) ->
+  #{name := Name, items := Items} = Rule,
+  [#{message => lists:flatten(io_lib:format(Message, Info)), line => LineNum, rule => Name}
+    || #{info := Info, message := Message, line_num := LineNum} <- Items].
 
 base_dir(Config) ->
   case test_server:lookup_config(base_dir, Config) of
