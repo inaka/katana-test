@@ -7,6 +7,8 @@
 
 -export([all/0]).
 -export([xref/1, dialyzer/1, elvis/1]).
+-ignore_xref([all/0]).
+-ignore_xref([xref/1, dialyzer/1, elvis/1]).
 
 -type config() :: [{atom(), term()}].
 
@@ -91,26 +93,30 @@ elvis(Config) ->
             false -> filename:join(BaseDir, "elvis.config")
           end,
         [ fix_dirs(Group, Config)
-        || Group <- elvis_config:load_file(ConfigFile)];
-      ConfigFile -> elvis_config:load_file(ConfigFile)
+        || Group <- elvis_config:from_file(ConfigFile)];
+      ConfigFile -> elvis_config:from_file(ConfigFile)
     end,
 
   ct:comment("Elvis rocks!"),
   case elvis_core:rock(ElvisConfig) of
     ok -> ok;
     {fail, Results} ->
-      Errors = [format_elvis_error(R) || #{rules := Rules} = R <- Results, Rules /= []],
+      Errors = [format_elvis_error(R)
+                    || #{rules := Rules} = R <- Results, Rules /= []],
       ct:fail({elvis_failed, Errors})
   end,
   {comment, ""}.
 
 format_elvis_error(Error) ->
-  #{file := #{path := Path}, rules := Rules} = Error,
-  #{file => Path, problems => lists:flatten([format_elvis_message(R) || R <- Rules])}.
+  #{file := Path, rules := Rules} = Error,
+  #{file => Path, problems => lists:flatten([format_elvis_message(R)
+                                                 || R <- Rules])}.
 
 format_elvis_message(Rule) ->
   #{name := Name, items := Items} = Rule,
-  [#{message => lists:flatten(io_lib:format(Message, Info)), line => LineNum, rule => Name}
+  [#{message => lists:flatten(io_lib:format(Message, Info)),
+     line => LineNum,
+     rule => Name}
     || #{info := Info, message := Message, line_num := LineNum} <- Items].
 
 base_dir(Config) ->
@@ -132,7 +138,8 @@ plts(Config) ->
         {[], Dirs} ->
           ExpandedDirs = [normalize_path(Dir) || Dir <- Dirs],
           DirsStr = string:join(ExpandedDirs, " "),
-          ct:fail("No plts found in: ~s - you need to at least have one", [DirsStr]);
+          ct:fail("No plts found in: ~s - you need to at least have one",
+                  [DirsStr]);
         {Plts, _} -> Plts
       end;
     Plts -> Plts
@@ -150,7 +157,8 @@ plts(BaseDir, true) ->
           % Last resort: if there are no plts in test or default, maybe
           % our user has some other profile where the plt is generated
           AllProfileDirs = filename:join(BaseDir, "../../../*"),
-          {filelib:wildcard(filename:join(AllProfileDirs, "*_plt")), [TestProfileDir, DefaultProfileDir, AllProfileDirs]};
+          {filelib:wildcard(filename:join(AllProfileDirs, "*_plt")),
+           [TestProfileDir, DefaultProfileDir, AllProfileDirs]};
         DefaultPlts -> {DefaultPlts, []}
       end;
     TestPlts -> {TestPlts, []}

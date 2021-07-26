@@ -13,6 +13,10 @@
 
 -type config() :: [{atom(), term()}].
 
+-if(?OTP_RELEASE >= 23).
+-behaviour(ct_suite).
+-endif.
+
 -spec init_per_suite(config()) -> config().
 init_per_suite(Config) ->
   [{application, katana_test}| Config].
