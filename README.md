@@ -1,5 +1,17 @@
 # katana-test
 
+# ⚠ THIS REPO IS ARCHIVED ⚠️
+
+Instead of using this tool, consider adding a `test` alias to your `rebar.config`, like this:
+
+```erlang
+{alias,
+ [{test, [compile, format, lint, hank, dialyzer, {ct, "--verbose"}, cover, edoc]}]}.
+```
+
+That way, you can run `rebar3 test` on your CI pipelines and get the code checked with all the desirable tools/plugins at once.
+
+<details><summary>Old Readme</summary>
 Katana Test is an Erlang library application containing modules useful for testing Erlang systems.
 It currently contains the module `ktn_meta_SUITE`, which is a Common Test suite to be included among your tests. Read below for more information.
 
@@ -58,3 +70,4 @@ all() -> [dialyzer].
 | `xref_config` | Config options for _xref_ | `#{dirs => [filename:join(BaseDir, "ebin"), filename:join(BaseDir, "test")], xref_defaults => [{verbose, true}, {recurse, true}, {builtins, true}]}` |
 | `xref_checks` | List of checks for _xref_ | `[ undefined_function_calls, locals_not_used, deprecated_function_calls]` |
 | `dirs` | List of folders to check with _xref_ and _dialyzer_ | `["ebin", "test"]` |
+</details>
